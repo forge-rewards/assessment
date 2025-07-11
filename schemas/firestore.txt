@@ -1,0 +1,111 @@
+brands/ (collection)
+  client_id: string,
+  created_time: timestamp,
+  email: string,
+  pause_key: string,
+  project_id: string
+  
+  locations/ (subcollection)
+    address: {
+      address_line_1: string,
+      city: string,
+      state: string,
+      postal_code: string,
+      country: string
+    },
+    client_location_id: string,
+    connected_time: timestamp,
+    disconnected_time: timestamp,
+    is_active: bool,
+    is_connected: bool,
+    name: string,
+    paused_at: timestamp,
+    pause_until: timestamp
+
+  menus/ (subcollection)
+    category_refs: DocumentReference[],
+    location_id: string,
+    name: string,
+    schedule: {
+      monday: ["HH:mm-HH:mm"],
+      tuesday: ["HH:mm-HH:mm"],
+      wednesday: ["HH:mm-HH:mm"],
+      thursday: ["HH:mm-HH:mm"],
+      friday: ["HH:mm-HH:mm"],
+      saturday: ["HH:mm-HH:mm"],
+      sunday: ["HH:mm-HH:mm"]
+    },
+    stream_id: string
+
+  item_categories/ (subcollection)
+    location_id: string,
+    menu_stream_id: string,
+    name: string,
+    stream_id: string
+    
+    items/ (nested subcollection)
+      allergens: string[],
+      description: string,
+      image_url: string,
+      is_active: bool,
+      is_alcohol: bool,
+      modifier_groups: [
+        {
+        modifier_group_ref: DocumentReference,
+        name: string,
+        rules: {
+          minimum_unique_modifiers_allowed: integer,
+          maximum_unique_modifiers_allowed: integer,
+          amount_of_modifiers_free: integer,
+          selection_type: "single" | "multiple"
+        },
+        stream_id: string
+        }
+      ],
+      name: string,
+      stream_id: string,
+      tax_ids: string[],
+      variations: [
+        {
+          currency: "usd",
+          is_active: bool,
+          name: string,
+          price: integer,
+          stream_id: string
+        }
+      ]
+    
+  modifier_groups/ (subcollection)
+    name: string,
+    rules: {
+      amount_of_modifiers_free: integer,
+      maximum_unique_modifiers_allowed: integer,
+      minimum_unique_modifiers_allowed: integer,
+      selection_type: "single" | "multiple"
+    },
+    stream_id: string
+
+    modifiers/ (nested subcollection)
+      currency: "usd",
+      is_active: bool,
+      name: string,
+      price: integer,
+      stream_id: string
+
+  holidays/ (subcollection)
+    date: "MM-DD",
+    hours: [
+      "HH:mm-HH:mm"
+    ],
+    location_id: string,
+    recurring_yearly: bool,
+    specific_years: integer[],
+    name: string
+
+  taxes/ (subcollection)
+    is_default: bool,
+    is_inclusive: bool,
+    location_id: string,
+    name: string,
+    rate: number,
+    stream_id: string

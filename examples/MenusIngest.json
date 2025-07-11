@@ -1,0 +1,95 @@
+{
+  "prep_time_minutes": 25,
+  "menus": [
+    {
+      "schedule": {
+        "monday": ["08:00-12:00", "14:00-20:00"],
+        "tuesday": ["08:00-12:00", "14:00-20:00"],
+        "wednesday": ["08:00-12:00", "14:00-20:00"],
+        "thursday": ["08:00-12:00", "14:00-20:00"],
+        "friday": ["08:00-12:00", "14:00-22:00"],
+        "saturday": ["09:00-13:00", "17:00-22:00"],
+        "sunday": []
+      },
+      "stream_id": "menu_001",
+      "name": "Lunch Menu",
+      "categories": [
+        {
+          "stream_id": "cat_001",
+          "name": "Appetizers",
+          "items": [
+            {
+              "stream_id": "item_001",
+              "name": "Fried Calamari",
+              "description": "Lightly breaded and fried calamari with marinara sauce.",
+              "tax_ids": ["tax_001"],
+              "images": {
+                "url": "https://example.com/images/calamari.jpg"
+              },
+              "variations": [
+                {
+                  "price": 1095,
+                  "currency": "usd",
+                  "stream_id": "var_001",
+                  "name": "Regular"
+                }
+              ],
+              "modifier_groups": [
+                {
+                  "stream_id": "mod_group_001",
+                  "name": "Dipping Sauces",
+                  "modifiers": [
+                    {
+                      "price": 100,
+                      "currency": "usd",
+                      "stream_id": "mod_001",
+                      "name": "Garlic Aioli",
+                      "is_active": true
+                    },
+                    {
+                      "price": 100,
+                      "currency": "usd",
+                      "stream_id": "mod_002",
+                      "name": "Chipotle Mayo",
+                      "is_active": true
+                    }
+                  ],
+                  "rules": {
+                    "minimum_unique_modifiers_allowed": 0,
+                    "maximum_unique_modifiers_allowed": 2,
+                    "amount_of_modifiers_free": 1,
+                    "selection_type": "multiple"
+                  }
+                }
+              ],
+              "is_active": true,
+              "allergens": ["shellfish", "gluten"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "holidays": [
+    {
+      "date": "12-25",
+      "recurring_yearly": true,
+      "name": "Christmas Day"
+    },
+    {
+      "date": "07-04",
+      "recurring_yearly": true,
+      "hours": ["10:00-14:00"],
+      "name": "Independence Day"
+    }
+  ],
+  "taxes": [
+    {
+      "stream_id": "tax_001",
+      "rate": 0.085,
+      "name": "Standard Sales Tax",
+      "is_inclusive": false,
+      "is_default": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+  "customer": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phone": "+14155551234"
+  },
+  "items": [
+    {
+      "id": "var_001",
+      "item_id": "item_001",
+      "category_id": "cat_001",
+      "name": "Fried Calamari",
+      "quantity": 1,
+      "price": 1095,
+      "currency": "usd",
+      "modifiers": [
+        {
+          "id": "mod_001",
+          "modifier_group_id": "mod_group_001",
+          "name": "Garlic Aioli",
+          "quantity": 1,
+          "price": 100,
+          "currency": "usd"
+        }
+      ],
+      "special_instructions": "Service with a smile!"
+    }
+  ],
+  "subtotal": 1095,
+  "customer_facing_id": "JDOE123",
+  "fulfillment_type": "pickup",
+  "tax": 93,
+  "service_charge": 40,
+  "discounts": [],
+  "should_include_utensils": true
+}

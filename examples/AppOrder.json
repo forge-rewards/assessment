@@ -1,0 +1,32 @@
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "phone": "+14155551234",
+  "email": "jane.doe@example.com",
+  "customerFacingId": "JDOE123",
+  "locationId": "location_001",
+  "cart": [
+    {
+      "quantity": 1,
+      "menuCategoryId": "cat_001",
+      "specialRequest": "Service with a smile!",
+      "itemName": "Fried Calamari",
+      "menuItemId": "item_001",
+      "variation": {
+        "id": "var_001",
+        "name": "Regular",
+        "price": 1095
+      },
+      "itemPrice": 1095,
+      "modifiers": [
+        {
+          "quantity": 1,
+          "modifierName": "Garlic Aioli",
+          "modifierPrice": 100,
+          "modifierItemId": "mod_001",
+          "modifierGroupId": "mod_group_001"
+        }
+      ]
+    }
+  ]
+}

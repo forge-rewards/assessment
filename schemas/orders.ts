@@ -31,7 +31,7 @@ export interface OrderItem {
   category_id: string; // The stream ID of the category the item belongs to
   name: string;
   quantity: number;
-  price: number; // The price of the item in cents
+  price: number; // The price of the item in cents (excludes modifiers)
   modifiers: OrderModifier[]; // The modifiers that the customer selected for this item
   currency: "usd";
   special_instructions?: string; // Item level special instructions, i.e customer modifications
@@ -71,7 +71,7 @@ interface AppCartItem {
   modifiers: AppModifier[]; // Adjust type if needed
   menuItemId: string; // The stream_id of the corresponding Item
   variation: AppVariation; // The variation of the item selected by the customer
-  itemPrice: number; // The price of the item in cents
+  itemPrice: number; // The price of the item in cents (excludes modifiers)
 }
 
 interface AppModifier {

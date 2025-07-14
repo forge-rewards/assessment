@@ -23,9 +23,11 @@
               "name": "Fried Calamari",
               "description": "Lightly breaded and fried calamari with marinara sauce.",
               "tax_ids": ["tax_001"],
-              "images": {
-                "url": "https://example.com/images/calamari.jpg"
-              },
+              "images": [
+                {
+                  "url": "https://example.com/images/calamari.jpg"
+                }
+              ],
               "variations": [
                 {
                   "price": 1095,
@@ -86,7 +88,7 @@
   "taxes": [
     {
       "stream_id": "tax_001",
-      "rate": 0.085,
+      "rate": 8.5,
       "name": "Standard Sales Tax",
       "is_inclusive": false,
       "is_default": true

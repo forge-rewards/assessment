@@ -35,11 +35,11 @@ export interface Category {
 
 export interface Item {
   is_alcohol?: boolean; // Provided when item is marked as Alcoholic and needs age verification
-  tax_ids: string[]; // Tax rates assigned to objects across the menu
+  tax_ids: string[]; // Tax rates assigned to this item
   stream_id: string;
   name: string;
   description?: string;
-  images?: { url: string };
+  images: { url: string }[]; // Possibly empty array of url-containing objects
   variations: ItemVariation[];
   modifier_groups: ModifierGroup[];
   is_active?: boolean;
@@ -87,7 +87,7 @@ export interface Holiday {
 export interface Tax {
   is_inclusive?: boolean; // Determines if the tax amount is already included in the item price
   stream_id: string;
-  rate: number;
+  rate: number; // In percentage points
   name: string;
   is_default?: boolean;
 }

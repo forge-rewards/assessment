@@ -29,13 +29,15 @@ export const serializeMenu = async (
  * to the format that the third-party orders API expects.
  *
  * @param order - The app-formatted order to be converted.
+ * @param brandId - The ID of the brand for which the order is being processed.
  * @returns The converted order in the format expected by the third-party API.
  */
 export const formatOrder = async (
-  order: orderSchema.AppOrder
+  order: orderSchema.AppOrder,
+  brandId: string
 ): Promise<orderSchema.NewApiOrder> => {
   const newOrderId = uuid.v4();
-  const newOrder: orderSchema.NewApiOrder = {};
+  const newOrder = {} as orderSchema.NewApiOrder;
 
   // TODO: convert the app-formatted order to the format the third-party
   // orders API expects.

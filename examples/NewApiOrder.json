@@ -28,7 +28,7 @@
     }
   ],
   "subtotal": 1095,
-  "customer_facing_id": "JDOE123",
+  "customer_facing_id": "#15",
   "fulfillment_type": "pickup",
   "tax": 93,
   "service_charge": 40,

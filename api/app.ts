@@ -52,9 +52,10 @@ app.post("/v1/orders", async (req: any, res: any) => {
   try {
     // Get the app-formatted order from the request body
     const appOrder = req.body.order as AppOrder;
+    const brandId = req.brandId as string;
 
     // Reorganize the order to match the format the third-party orders API expects
-    const formattedOrder = await formatOrder(appOrder);
+    const formattedOrder = await formatOrder(appOrder, brandId);
 
     // Send the formatted order to the third-party orders API
     const url = "https://connect.forgerewards.com/v1/orders";
